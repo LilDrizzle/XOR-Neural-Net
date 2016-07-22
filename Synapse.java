@@ -9,7 +9,8 @@ public class Synapse
         weight = w;
     } 
     
-    public void setWeight(double w) {
+    public void setWeight(double w) 
+	{
         weight = w;
     } 
     
