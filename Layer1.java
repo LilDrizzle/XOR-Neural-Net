@@ -7,14 +7,15 @@ public class Layer1 extends Node
         super();
         originalValue = 0;
     }
-    public double calculate()//real value
+	
+    public double calculate()
     {
         originalValue = calculateFromParents();
         setValue(MathHelper.doLogisticsFunction(calculateFromParents()));
         return getValue();
     }
     
-    public double calculateFromParents()//original value
+    public double calculateFromParents()
     {
         double sum = 0;
         for(Synapse s : this.parents)
@@ -30,6 +31,4 @@ public class Layer1 extends Node
     {
         return originalValue;
     }
-    
-    
 }
