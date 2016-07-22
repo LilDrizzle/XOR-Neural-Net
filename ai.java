@@ -189,13 +189,24 @@ public class ai
         {
             hiddenNodes.add(new Layer1());
         }
-		
         for(int x = 0; x < NUM_INPUT_NODES; x++)
         {
             inputNodes.add(new InputNode());
         }
-		
         theFinalNode = new OutputNode();
+        
+        //associate the nodes together
+        for(Node h : hiddenNodes)
+        {
+        	for(Node i : inputNodes)
+        	{
+        		h.addParent(i);
+        	}
+        }
+        for(Node n : hiddenNodes)
+        {
+        	theFinalNode.addParent(n);
+        }
         
         //set value of input nodes
         for(InputNode n : inputNodes)
